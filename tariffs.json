@@ -1,0 +1,232 @@
+{
+  "stand": "2026-11-24",
+  "hinweis": "Von Hand recherchiert aus Anbieter-Websites und Tarifvergleichen. Preise in €/kWh inkl. MwSt. Ändern sich häufig – maßgeblich ist der Preis an der Säule bzw. in der App. Sobald die AFIR-Daten der Mobilithek angebunden sind, ersetzen echte Ad-hoc-Preise je Ladepunkt diese Werte.",
+  "classes": {
+    "ac": "AC",
+    "dc": "DC bis 50 kW",
+    "hpc": "DC über 50 kW"
+  },
+
+  "adhoc": [
+    {
+      "brand": "^Aral pulse",
+      "ac": 0.59, "dc": 0.69, "hpc": 0.79,
+      "note": "Ladesäulentarif: Kreditkarte, QR-Code oder App ohne Registrierung.",
+      "source": "https://www.aral.de/de/global/retail/pulse/tarife-bezahlmethoden.html",
+      "stand": "abgerufen 24.11.2026"
+    },
+    {
+      "brand": "^IONITY$",
+      "dc": 0.72, "hpc": 0.72,
+      "note": "IONITY Direct: ohne App und Registrierung, kontaktlos bezahlen.",
+      "source": "https://ionity.eu/de/abonnements",
+      "stand": "abgerufen 24.11.2026"
+    },
+    {
+      "brand": "^Lidl$",
+      "ac": 0.29, "dc": 0.44, "hpc": 0.47,
+      "note": "Mit der Lidl-Plus-App. Ohne App laut Berichten bis 0,55 €/kWh an Schnellladern.",
+      "source": "https://www.autobild.de/artikel/e-auto-laden-bei-aldi-lidl-mcdonalds-und-anderen-laeden-930292.html",
+      "stand": "Herbst 2026 (Presse)"
+    },
+    {
+      "brand": "^Aldi$",
+      "ac": 0.29, "dc": 0.44, "hpc": 0.47,
+      "note": "Direktzahlung ohne App (ALDI SÜD). ALDI Nord kann abweichen. An Ultraschnellsäulen kostet auch AC-Laden 0,47 €/kWh.",
+      "source": "https://ladechef.de/tarife/aldi-sued/",
+      "stand": "09.11.2026 (Aggregator)"
+    },
+    {
+      "brand": "^Kaufland$",
+      "ac": 0.48, "dc": 0.78, "hpc": 0.78,
+      "note": "Ohne App; mit Kaufland-App wie Lidl (0,29 / 0,44 / 0,47 €/kWh). Zuordnung in der Quelle nicht ganz eindeutig.",
+      "uncertain": true,
+      "source": "https://www.autobild.de/artikel/e-auto-laden-bei-aldi-lidl-mcdonalds-und-anderen-laeden-930292.html",
+      "stand": "Herbst 2026 (Presse)"
+    },
+    {
+      "brand": "^EnBW$",
+      "dc": [0.59, 0.66], "hpc": [0.59, 0.66],
+      "note": "Ad-hoc in der EnBW-App, je nach Standort.",
+      "source": "https://einfacheauto.de/blog/e-auto-ladetarife-im-november-2026",
+      "stand": "30.10.2026 (Vergleichsportal)"
+    },
+    {
+      "brand": "^E\\.ON$",
+      "dc": [0.57, 0.74], "hpc": [0.57, 0.74],
+      "note": "Je nach Standort, siehe App.",
+      "source": "https://einfacheauto.de/blog/e-auto-ladetarife-im-november-2026",
+      "stand": "30.10.2026 (Vergleichsportal)"
+    },
+    {
+      "brand": "^TotalEnergies$",
+      "dc": [0.67, 0.78], "hpc": [0.67, 0.78],
+      "note": "Je nach Standort, siehe App.",
+      "source": "https://einfacheauto.de/blog/e-auto-ladetarife-im-november-2026",
+      "stand": "30.10.2026 (Vergleichsportal)"
+    },
+    {
+      "brand": "^Mer$",
+      "dc": [0.58, 0.79], "hpc": [0.58, 0.79],
+      "note": "Mer Smart Pricing: dynamisch je Standort und Zeit.",
+      "source": "https://einfacheauto.de/blog/e-auto-ladetarife-im-november-2026",
+      "stand": "30.10.2026 (Vergleichsportal)"
+    },
+    {
+      "brand": "^Fastned$",
+      "dc": 0.69, "hpc": 0.69,
+      "source": "https://einfacheauto.de/blog/e-auto-ladetarife-im-november-2026",
+      "stand": "30.10.2026 (Vergleichsportal)"
+    },
+    {
+      "brand": "^Vattenfall$",
+      "dc": [0.44, 0.49], "hpc": [0.44, 0.49],
+      "source": "https://einfacheauto.de/blog/e-auto-ladetarife-im-november-2026",
+      "stand": "30.10.2026 (Vergleichsportal)"
+    },
+    {
+      "brand": "^Electra$",
+      "dc": [0.69, null], "hpc": [0.69, null],
+      "note": "Standard-App-Preis ohne Abo, ab 0,69 €/kWh.",
+      "source": "https://einfacheauto.de/blog/e-auto-ladetarife-im-november-2026",
+      "stand": "30.10.2026 (Vergleichsportal)"
+    },
+    {
+      "brand": "^Tesla$",
+      "dynamic": true,
+      "note": "Dynamische Preise je Standort und Uhrzeit, nur in der Tesla-App sichtbar.",
+      "source": "https://www.adac.de/rund-ums-fahrzeug/elektromobilitaet/laden/elektroauto-ladesaeulen-strompreise/",
+      "stand": "2026"
+    }
+  ],
+
+  "tariffs": [
+    {
+      "id": "enbw-s", "name": "EnBW mobility+ Ladetarif S", "provider": "EnBW",
+      "fee": 0, "term": "keine Grundgebühr",
+      "own": ["^EnBW$"], "ownPrice": {"ac": 0.56, "dc": 0.56, "hpc": 0.56},
+      "other": {"range": [0.56, 0.89]},
+      "blocking": "Ab 4 Std. Anschlussdauer 0,10 €/Min., max. 12 € je Ladevorgang.",
+      "conditions": "Buchung in der EnBW mobility+ App. Gedacht für unter 3 Ladevorgänge bzw. 60 kWh im Monat.",
+      "source": "https://www.enbw.com/elektromobilitaet/produkte/ladetarife", "stand": "01.12.2025 (Tarifstand laut EnBW)"
+    },
+    {
+      "id": "enbw-m", "name": "EnBW mobility+ Ladetarif M", "provider": "EnBW",
+      "fee": 5.99, "term": "monatlich",
+      "own": ["^EnBW$"], "ownPrice": {"ac": 0.46, "dc": 0.46, "hpc": 0.46},
+      "other": {"range": [0.56, 0.89]},
+      "blocking": "Ab 4 Std. Anschlussdauer 0,10 €/Min., max. 12 € je Ladevorgang.",
+      "conditions": "Buchung in der EnBW mobility+ App. Ab 3 Ladevorgängen bzw. 60 kWh im Monat.",
+      "source": "https://www.enbw.com/elektromobilitaet/produkte/ladetarife", "stand": "01.12.2025 (Tarifstand laut EnBW)"
+    },
+    {
+      "id": "enbw-l", "name": "EnBW mobility+ Ladetarif L", "provider": "EnBW",
+      "fee": 11.99, "term": "monatlich",
+      "own": ["^EnBW$"], "ownPrice": {"ac": 0.39, "dc": 0.39, "hpc": 0.39},
+      "other": {"range": [0.56, 0.89]},
+      "blocking": "Ab 4 Std. Anschlussdauer 0,10 €/Min., max. 12 € je Ladevorgang.",
+      "conditions": "Buchung in der EnBW mobility+ App. Ab 4 Ladevorgängen bzw. 86 kWh im Monat. EnBW-Energiekunden erhalten 10 % Rabatt an EnBW-Säulen.",
+      "source": "https://www.enbw.com/elektromobilitaet/produkte/ladetarife", "stand": "01.12.2025 (Tarifstand laut EnBW)"
+    },
+    {
+      "id": "adac", "name": "ADAC e-Charge", "provider": "ADAC (über Aral pulse)",
+      "fee": 0, "term": "keine Grundgebühr, keine Laufzeit",
+      "own": ["^Aral pulse"], "ownPrice": {"ac": 0.55, "dc": 0.55, "hpc": 0.55},
+      "other": {"flat": {"ac": 0.75, "dc": 0.75, "hpc": 0.75}},
+      "blocking": "An Fremdsäulen 0,15 €/Min. (DC ab 45 Min., AC ab 120–360 Min., Angaben des ADAC uneinheitlich). An Aral-pulse-Säulen keine.",
+      "conditions": "Nur für ADAC-Mitglieder (bis zu 4 weitere Personen). Aral-pulse-App oder ADAC-e-Charge-Karte.",
+      "source": "https://www.adac.de/rund-ums-fahrzeug/e-angebote/ladekarte/", "stand": "abgerufen 24.11.2026"
+    },
+    {
+      "id": "aral-klassik", "name": "Aral pulse Klassik", "provider": "Aral pulse",
+      "fee": 0, "term": "keine Grundgebühr",
+      "own": ["^Aral pulse"], "ownPrice": {"ac": 0.47, "dc": 0.52, "hpc": 0.62},
+      "other": {"flat": {"ac": 0.59, "dc": 0.79, "hpc": 0.79}, "uncertain": true},
+      "blocking": "An Fremdsäulen 0,15 €/Min. (AC ab 360 Min., DC ab 45 Min.). An Aral-pulse-Säulen keine.",
+      "conditions": "Registrierung in der Aral-pulse-App oder Ladekarte.",
+      "source": "https://www.aral.de/de/global/retail/pulse/tarife-bezahlmethoden.html", "stand": "abgerufen 24.11.2026"
+    },
+    {
+      "id": "aral-extra", "name": "Aral pulse Extra", "provider": "Aral pulse",
+      "fee": 2.99, "term": "monatlich",
+      "own": ["^Aral pulse"], "ownPrice": {"ac": 0.41, "dc": 0.46, "hpc": 0.54},
+      "other": {"flat": {"ac": 0.59, "dc": 0.79, "hpc": 0.79}, "uncertain": true},
+      "blocking": "An Fremdsäulen 0,15 €/Min. (AC ab 360 Min., DC ab 45 Min.). An Aral-pulse-Säulen keine.",
+      "conditions": "Registrierung in der Aral-pulse-App, Grundgebühr 2,99 €/Monat.",
+      "source": "https://www.aral.de/de/global/retail/pulse/tarife-bezahlmethoden.html", "stand": "abgerufen 24.11.2026"
+    },
+    {
+      "id": "ionity-motion", "name": "IONITY Motion", "provider": "IONITY",
+      "fee": 5.99, "term": "monatlich kündbar (Jahresabo 49,99–59,99 €)",
+      "own": ["^IONITY$"], "ownPrice": {"dc": 0.53, "hpc": 0.53},
+      "other": null,
+      "blocking": "Keine Angabe.",
+      "conditions": "Nur an IONITY-Stationen, Buchung in der IONITY-App.",
+      "source": "https://ionity.eu/de/abonnements", "stand": "abgerufen 24.11.2026"
+    },
+    {
+      "id": "ionity-power", "name": "IONITY Power", "provider": "IONITY",
+      "fee": 11.99, "term": "monatlich kündbar (Jahresabo 99,99–119,99 €)",
+      "own": ["^IONITY$"], "ownPrice": {"dc": 0.42, "hpc": 0.42},
+      "other": null,
+      "blocking": "Keine Angabe.",
+      "conditions": "Nur an IONITY-Stationen, Buchung in der IONITY-App.",
+      "source": "https://ionity.eu/de/abonnements", "stand": "abgerufen 24.11.2026"
+    },
+    {
+      "id": "ewe-go", "name": "EWE Go Ladetarif", "provider": "EWE Go",
+      "fee": 0, "term": "keine Grundgebühr",
+      "own": ["^EWE Go$"], "ownPrice": {"ac": 0.52, "dc": 0.52, "hpc": 0.52},
+      "other": {"flat": {"ac": 0.62, "dc": 0.62, "hpc": 0.62}},
+      "blocking": "An Partnerstationen ab 4 Std. Standzeit 0,10 €/Min., max. 24 € je Ladevorgang.",
+      "conditions": "Kostenlose Ladekarte oder EWE-Go-App, rund 100.000 Ladepunkte in Deutschland.",
+      "source": "https://www.ewe-go.de/ladetarif", "stand": "abgerufen 24.11.2026"
+    },
+    {
+      "id": "maingau", "name": "MAINGAU Autostrom", "provider": "MAINGAU Energie",
+      "fee": 0, "term": "keine Grundgebühr, keine Laufzeit",
+      "own": ["^MAINGAU"], "ownPrice": {"ac": 0.52, "dc": 0.62, "hpc": 0.62},
+      "other": {"tiers": [
+        {"brands": ["^Berliner Stadtwerke", "^JET", "^Kaufland$", "^Lidl$", "^MAINGAU", "^Vattenfall$", "^IONITY$", "^Mer$"], "ac": 0.52, "dc": 0.62, "hpc": 0.62, "label": "Niedrigpreis"},
+        {"brands": ["^Allego$", "^E\\.ON$", "^EnBW$", "^EWE Go$", "^Fastned$", "^LichtBlick"], "ac": 0.82, "dc": 0.82, "hpc": 0.82, "label": "Hochpreis"},
+        {"brands": [".*"], "ac": 0.72, "dc": 0.72, "hpc": 0.72, "label": "Standardpreis"}
+      ]},
+      "blocking": "Standzeitzuschlag 0,10 €/Min. (AC ab 180 Min., DC ab 60 Min.), max. 12 € je Ladevorgang.",
+      "conditions": "Neukundenpreise. Mer-Säulen im November 2026 als Aktion im Niedrigpreis.",
+      "source": "https://www.maingau-energie.de/e-mobilitaet/autostrom", "stand": "abgerufen 24.11.2026"
+    },
+    {
+      "id": "maingau-vorteil", "name": "MAINGAU Autostrom Vorteil", "provider": "MAINGAU Energie",
+      "fee": 0, "term": "keine Grundgebühr",
+      "own": ["^MAINGAU"], "ownPrice": {"ac": 0.42, "dc": 0.52, "hpc": 0.52},
+      "other": {"tiers": [
+        {"brands": ["^Berliner Stadtwerke", "^JET", "^Kaufland$", "^Lidl$", "^MAINGAU", "^Vattenfall$", "^IONITY$", "^Mer$"], "ac": 0.42, "dc": 0.52, "hpc": 0.52, "label": "Niedrigpreis"},
+        {"brands": ["^Allego$", "^E\\.ON$", "^EnBW$", "^EWE Go$", "^Fastned$", "^LichtBlick"], "ac": 0.82, "dc": 0.82, "hpc": 0.82, "label": "Hochpreis"},
+        {"brands": [".*"], "ac": 0.62, "dc": 0.62, "hpc": 0.62, "label": "Standardpreis"}
+      ]},
+      "blocking": "Standzeitzuschlag 0,10 €/Min. (AC ab 180 Min., DC ab 60 Min.), max. 12 € je Ladevorgang.",
+      "conditions": "Nur mit einem Strom-, Gas-, Internet- oder Mobilfunkvertrag bei MAINGAU.",
+      "source": "https://www.maingau-energie.de/e-mobilitaet/autostrom", "stand": "abgerufen 24.11.2026"
+    },
+    {
+      "id": "electra-smart", "name": "Electra+ Smart", "provider": "Electra",
+      "fee": 4.99, "term": "keine Bindung",
+      "own": ["^Electra$"], "ownPrice": {"dc": 0.49, "hpc": 0.49, "from": true},
+      "other": null,
+      "blocking": "Keine Angabe.",
+      "conditions": "Electra-App. 0,20 €/kWh Rabatt auf den App-Preis an Electra-Stationen; zusätzlich Vorzugspreise bei IONITY, Fastned und Atlante (Charge League, Preise nicht eindeutig angegeben).",
+      "source": "https://www.go-electra.com/de/electra-plus/", "stand": "abgerufen 24.11.2026"
+    },
+    {
+      "id": "tesla-member", "name": "Tesla Supercharging-Mitgliedschaft", "provider": "Tesla",
+      "fee": 9.99, "term": "monatlich (Jahresoption ca. 100 €)",
+      "own": ["^Tesla$"], "ownPrice": null,
+      "other": null,
+      "blocking": "Belegungsgebühr bei vollen Stationen (Tesla-App).",
+      "conditions": "Für Fahrzeuge anderer Marken über die Tesla-App. Preise dynamisch je Standort und Uhrzeit, deutlich günstiger als ohne Mitgliedschaft.",
+      "source": "https://www.adac.de/rund-ums-fahrzeug/elektromobilitaet/laden/elektroauto-ladesaeulen-strompreise/", "stand": "2026"
+    }
+  ],
+
+  "noRoaming": ["^Tesla$"]
+}
